@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "build:css": "sass --no-source-map --style compressed  scss/main.scss css/main.css",
+    "build:css": "sass --no-source-map --style compressed  src/scss/main.scss dist/css/main.css",
     "build": "npm run -s build:css",
-    "start": "serve",
+    "start": "serve dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
