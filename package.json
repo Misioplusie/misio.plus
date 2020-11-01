@@ -1,0 +1,26 @@
+{
+  "name": "misio.plus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "build:css": "sass --no-source-map --style compressed  scss/main.scss css/main.css",
+    "build": "npm run -s build:css",
+    "start": "serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paroxp/misio.plus.git"
+  },
+  "author": "Rafal Proszowski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paroxp/misio.plus/issues"
+  },
+  "homepage": "https://github.com/paroxp/misio.plus#readme",
+  "devDependencies": {
+    "sass": "^1.28.0",
+    "serve": "^11.3.2"
+  }
+}
