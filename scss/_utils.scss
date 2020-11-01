@@ -1,0 +1,10 @@
+::-moz-selection { background-color: #b10dc9; color: #fff; }
+::selection { background-color: #b10dc9; color: #fff; }
+
+.visually-hidden {
+  @include govuk-visually-hidden();
+}
+
+.block {
+  display: block;
+}

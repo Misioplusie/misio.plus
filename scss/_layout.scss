@@ -1,0 +1,14 @@
+html {
+  background-color: #36393f;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+body {
+  max-width: $tablet;
+  margin: 0 auto;
+  padding: 1em;
+}
