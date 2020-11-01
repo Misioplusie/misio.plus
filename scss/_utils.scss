@@ -1,5 +1,5 @@
-::-moz-selection { background-color: #b10dc9; color: #fff; }
-::selection { background-color: #b10dc9; color: #fff; }
+::-moz-selection { background-color: $purple; color: $white; }
+::selection { background-color: $purple; color: $white; }
 
 .visually-hidden {
   @include govuk-visually-hidden();
