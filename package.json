@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "build:css": "sass --no-source-map --style compressed  src/scss/main.scss dist/css/main.css",
-    "build": "npm run -s build:css",
-    "start": "serve dist",
+    "dev": "next dev",
+    "build": "next build && next export -o dist",
+    "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,13 +19,21 @@
     "url": "https://github.com/paroxp/misio.plus/issues"
   },
   "homepage": "https://github.com/paroxp/misio.plus#readme",
+  "dependencies": {
+    "next": "^10.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
   "devDependencies": {
+    "@types/node": "^14.14.6",
+    "@types/react": "^16.9.55",
+    "@types/react-dom": "^16.9.9",
     "@typescript-eslint/eslint-plugin": "^4.6.0",
     "@typescript-eslint/parser": "^4.6.0",
     "eslint": "^7.12.1",
     "eslint-plugin-functional": "^3.1.0",
     "eslint-plugin-import": "^2.22.1",
     "sass": "^1.28.0",
-    "serve": "^11.3.2"
+    "typescript": "^4.0.5"
   }
 }

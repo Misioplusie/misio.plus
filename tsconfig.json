@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "outDir": "dist",
+    "module": "commonjs",
+    "target": "es6",
+    "jsx": "preserve",
+    "lib": [
+      "es2015",
+      "es2016.array.include",
+      "es2017",
+      "dom"
+    ],
+    "sourceMap": false,
+    "inlineSources": false,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "isolatedModules": true,
+    "pretty": true,
+    "allowJs": true,
+    "importHelpers": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**test**"
+  ],
+  "types": []
+}
