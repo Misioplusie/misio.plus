@@ -3,7 +3,7 @@
 header.main {
   > div {
     display: inline-block;
-    margin-right: 1em;
+    margin-right: 1rem;
   }
 
   section {
@@ -15,6 +15,7 @@ header.main {
 
   h1 {
     margin: 0;
+    margin-left: .5rem;
     padding: 0;
   }
 
@@ -33,7 +34,7 @@ header.main {
 
         a {
           border: 1px solid transparent;
-          padding: .5em;
+          padding: .5rem;
         }
 
         &:hover, &:active, &.active {

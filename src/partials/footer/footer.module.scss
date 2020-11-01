@@ -24,7 +24,7 @@ nav.main {
       display: inline;
 
       &:not(:last-of-type) {
-        margin-right: 1em;
+        margin-right: 1rem;
       }
 
       a {
@@ -32,7 +32,7 @@ nav.main {
 
         > div {
           display: inline-block;
-          margin-right: .5em;
+          margin-right: .5rem;
           vertical-align: middle;
         }
       }
