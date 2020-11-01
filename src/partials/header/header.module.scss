@@ -1,0 +1,17 @@
+header.main {
+  figure {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+
+    > div {
+      display: inline-block;
+      margin-right: 1em;
+    }
+
+    figcaption {
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+}
