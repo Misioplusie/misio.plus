@@ -2,12 +2,15 @@ main.home {
   align-items: center;
   display: flex;
   flex: 1;
+  flex-wrap: wrap;
   justify-content: center;
   min-height: 100vh;
   padding: 0;
   text-align: center;
 
-  figure > div {
-    display: inline-block;
+  figure {
+    > div {
+      display: inline-block;
+    }
   }
 }

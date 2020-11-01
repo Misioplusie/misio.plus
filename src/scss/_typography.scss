@@ -69,9 +69,12 @@ h1, h2, h3, h4, h5, h6 {
 
   small {
     color: $gray;
-    font-size: 60%;
     font-weight: normal;
   }
+}
+
+small {
+  font-size: 60%;
 }
 
 a, a:link, a:visited {

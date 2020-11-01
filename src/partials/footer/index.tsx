@@ -1,15 +1,13 @@
 import React, { ReactElement } from 'react';
 
 import styles from './footer.module.scss';
+import { Navigation } from './navigation';
 
 export function Footer(): ReactElement {
   return <footer className={styles.main}>
-    <nav>
-      <ul>
-        <li>
-          <a href="/">Strona główna</a>
-        </li>
-      </ul>
-    </nav>
+    <Navigation />
+    <p>
+      <small>Copyright &copy; {(new Date).getFullYear()} Misioplusie</small>
+    </p>
   </footer>;
 }
