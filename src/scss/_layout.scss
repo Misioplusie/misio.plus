@@ -12,3 +12,39 @@ body {
   margin: 0 auto;
   padding: 1em;
 }
+
+header {
+  figure {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+
+    img {
+      display: inline-block;
+      margin-right: 1em;
+    }
+
+    figcaption {
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+}
+
+footer {
+  text-align: center;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline;
+
+      &:not(:last-of-type) {
+        margin-right: 1em;
+      }
+    }
+  }
+}
