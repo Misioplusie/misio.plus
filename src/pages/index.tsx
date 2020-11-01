@@ -10,7 +10,7 @@ export default function Home(): ReactElement {
     <main className={styles.home}>
       <section>
         <figure>
-          <Image src="/img/misioplusie.webp" alt="Gildia Misioplusie" height={128} width={128} />
+          <img src="/img/misioplusie.webp" alt="Gildia Misioplusie" />
 
           <figcaption>
             <h1>

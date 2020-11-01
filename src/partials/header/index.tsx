@@ -11,7 +11,7 @@ interface HeaderProperties {
 
 export function Header(props: HeaderProperties): ReactElement {
   return <header className={styles.main}>
-    <Image src="/img/misioplusie.webp" alt="Gildia Misioplusie" height={128} width={128} />
+    <img src="/img/misioplusie.webp" alt="Gildia Misioplusie" />
 
     <section>
       <h1>
