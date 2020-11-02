@@ -1,7 +1,6 @@
-import Image from 'next/image';
 import React, { ReactElement } from 'react';
 
-import { Navigation } from '../partials/footer/navigation';
+import { Navigation } from '../partials/header/navigation';
 
 import styles from './index.module.scss';
 

@@ -1,8 +1,7 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import React, { ReactElement } from 'react';
 
 import styles from './header.module.scss';
+import { Navigation } from './navigation';
 
 interface HeaderProperties {
   readonly page?: string;
@@ -19,20 +18,7 @@ export function Header(props: HeaderProperties): ReactElement {
         <small className="visually-hidden">Burning Legion (EU) - Horde</small>
       </h1>
 
-      <nav>
-        <ul>
-          <li className={props.page === 'home' ? styles.active : ''}>
-            <Link href="/">
-              Strona główna
-            </Link>
-          </li>
-          <li className={props.page === 'raid' ? styles.active : ''}>
-            <Link href="/raid">
-              Rajdy
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <Navigation page={props.page} />
     </section>
   </header>;
 }

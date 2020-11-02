@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React, { ReactElement } from 'react';
 
 import styles from './footer.module.scss';
@@ -6,16 +5,6 @@ import styles from './footer.module.scss';
 export function Navigation(): ReactElement {
   return <nav className={styles.main}>
     <ul>
-      <li>
-        <Link href="/">
-          Strona główna
-        </Link>
-      </li>
-      <li>
-        <Link href="/raid">
-          Rajdy
-        </Link>
-      </li>
       <li>
         <a
           href="https://worldofwarcraft.com/en-gb/guild/EU/burning-legion/misioplusie"
