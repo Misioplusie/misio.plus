@@ -18,7 +18,7 @@ export default function Home(): ReactElement {
             </h1>
           </figcaption>
         </figure>
-        <Navigation />
+        <Navigation hideHomepage={true} />
       </section>
     </main>
   </>;
