@@ -6,6 +6,7 @@ import { DateTime, Settings } from 'luxon';
 import { GetStaticProps, GetStaticPropsResult } from 'next';
 import Head from 'next/head';
 import React, { ReactElement } from 'react';
+import sharp from 'sharp';
 
 import { Footer, Header } from '../partials';
 
@@ -17,6 +18,7 @@ const readDir = promisify(readdir);
 
 interface GalleryElement {
   readonly filename: string;
+  readonly thumbnail: string;
   readonly timestamp: number;
 }
 
@@ -26,15 +28,20 @@ interface GalleryProperties {
 
 export const getStaticProps: GetStaticProps = async (): Promise<GetStaticPropsResult<GalleryProperties>> => {
   const filenames = await readDir(resolve('public', 'gallery'));
-  const elements = filenames.map(filename => {
+
+  const elements = await Promise.all(filenames.filter(name => name !== 'min').map(async filename => {
     const parseName = filename.match('[0-9]{4}-[0-9]{2}-[0-9]{2}');
     const timestamp = parseName ? DateTime.fromISO(parseName[0]) : DateTime.local();
+    await sharp(resolve('public', 'gallery', filename))
+      .resize(720)
+      .toFile(resolve('public', 'gallery', 'min', filename));
 
     return {
-      filename,
+      filename: `/gallery/${filename}`,
+      thumbnail: `/gallery/min/${filename}`,
       timestamp: timestamp.toMillis(),
     };
-  });
+  }));
 
   return {
     props: {
@@ -49,7 +56,7 @@ export default function Gallery(props: GalleryProperties): ReactElement {
       {props.gallery.map(item => <link
         key={item.filename}
         rel="preload"
-        href={`/gallery/${item.filename}`}
+        href={item.filename}
         as="image" />)}
     </Head>
 
@@ -57,9 +64,9 @@ export default function Gallery(props: GalleryProperties): ReactElement {
 
     <main className={styles.gallery}>
       {props.gallery.map(item => <div key={item.filename}>
-        <a href={`/gallery/${item.filename}`} target="_blank">
+        <a href={item.filename} target="_blank">
           <img
-            src={`/gallery/${item.filename}`}
+            src={item.thumbnail}
             alt={`Zrobione ${DateTime.fromMillis(item.timestamp).toLocaleString(DateTime.DATE_FULL)}`} />
         </a>
       </div>)}
