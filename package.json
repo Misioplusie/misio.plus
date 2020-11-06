@@ -5,8 +5,7 @@
   "main": "index.html",
   "scripts": {
     "dev": "next dev",
-    "build:gallery": "ls -1 public/gallery/ | jq -Rsc 'split(\"\\n\") | map(select(length > 0))' > public/gallery.json",
-    "build": "npm run -s build:gallery && next build && next export -o dist",
+    "build": "next build && next export -o dist",
     "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
