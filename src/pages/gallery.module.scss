@@ -12,14 +12,20 @@ main.gallery {
   div {
     display: inline-block;
     flex: 1 1 50%;
+    line-height: 0;
     padding: .5rem;
 
     @include min($tablet) {
       flex: 1 1 33%;
     }
 
-    img {
+    a {
       border: 1px solid $black;
+      display: inline-block;
+      line-height: 0;
+    }
+
+    img {
       max-height: 100%;
       max-width: 100%;
     }
