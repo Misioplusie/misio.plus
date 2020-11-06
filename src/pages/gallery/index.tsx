@@ -8,9 +8,9 @@ import Head from 'next/head';
 import React, { ReactElement } from 'react';
 import sharp from 'sharp';
 
-import { Footer, Header } from '../partials';
+import { Footer, Header } from '../../partials';
 
-import styles from './gallery.module.scss';
+import styles from './styles.module.scss';
 
 Settings.defaultLocale = 'pl';
 

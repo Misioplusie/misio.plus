@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 
 import { Navigation } from '../partials/header/navigation';
 
-import styles from './index.module.scss';
+import styles from './styles.module.scss';
 
 export default function Home(): ReactElement {
   return <>
