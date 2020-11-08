@@ -16,6 +16,9 @@ export function Navigation(props: NavigationProperties): ReactElement {
           Strona główna
         </Link>
       </li> : undefined }
+      <li className={props.page === 'coc' ? styles.active : ''}>
+        <Link href="/code-of-conduct">Regulamin</Link>
+      </li>
       <li className={props.page === 'raid' ? styles.active : ''}>
         <Link href="/raid">
           Rajdy

@@ -1,0 +1,15 @@
+@import "../../scss/methods";
+@import "../../scss/variables";
+
+.main {
+  h2 img {
+    display: inline-block;
+    max-height: 1.5rem;
+    max-width: 2rem;
+    vertical-align: middle;
+
+    @include min($tablet) {
+      max-height: 2rem;
+    }
+  }
+}
