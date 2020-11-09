@@ -1,0 +1,63 @@
+@import "../../scss/methods";
+@import "../../scss/variables";
+
+main.raid {
+  details {
+    summary {
+      border: 0;
+      outline: none;
+      cursor: pointer;
+      font-size: 24px;
+      font-size: 1.5rem;
+
+      @include min($tablet) {
+        font-size: 32px;
+        font-size: 2rem;
+      }
+
+      h2 {
+        display: inline-block;
+      }
+    }
+  }
+
+  dl {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+
+    dt, dd {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 1rem 0;
+      vertical-align: top;
+
+      @include min($tablet) {
+        display: inline-block;
+      }
+    }
+
+    dt {
+      @include min($tablet) {
+        width: 30%;
+      }
+    }
+
+    dd {
+      @include min($tablet) {
+        width: 70%;
+      }
+    }
+  }
+
+  ul {
+    @include min($tablet) {
+      margin: 0;
+    }
+  }
+
+  a img {
+    margin-right: .25rem;
+    vertical-align: middle;
+  }
+}
