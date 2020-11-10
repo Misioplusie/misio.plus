@@ -5,11 +5,13 @@ import { Page } from '../page';
 
 import styles from './styles.module.scss';
 
-interface PageProperties {
+interface RaidPageProperties {
   readonly children: ReactNode;
+  readonly encounter?: string;
+  readonly raid: string;
 }
 
-interface DifficulityProperties {
+interface DifficultyProperties {
   readonly children: ReactNode;
   readonly title: string;
 }
@@ -19,7 +21,7 @@ interface ModelProperties {
   readonly name: string;
 }
 
-interface EncoutnerProperties extends ModelProperties {
+interface EncounterProperties extends ModelProperties {
   readonly children: ReactNode;
   readonly open?: boolean;
 }
@@ -28,7 +30,7 @@ export interface BossProperties {
   readonly open?: boolean;
 }
 
-export function Difficulity({ children, title }: DifficulityProperties): ReactElement {
+export function Difficulty({ children, title }: DifficultyProperties): ReactElement {
   return <>
     <dt>
       {title}
@@ -47,7 +49,7 @@ export function Model(props: ModelProperties): ReactElement {
   </p>;
 }
 
-export function Encounter(props: EncoutnerProperties): ReactElement {
+export function Encounter(props: EncounterProperties): ReactElement {
   const slug = props.name.toLocaleLowerCase().replace(/(\s_?:?@?\/?\\?)+/g, '-').replace(/[^0-9a-zA-Z-]/g, '');
 
   return <details id={slug} open={props.open}>
@@ -72,13 +74,13 @@ export function Encounter(props: EncoutnerProperties): ReactElement {
   </details>;
 }
 
-export function RaidPage(props: PageProperties): ReactElement {
-  return <Page subtitle="Rajdy" slug='raid'>
+export function RaidPage(props: RaidPageProperties): ReactElement {
+  return <Page subtitle={`Rajd - ${props.raid}`} slug='raid'>
     <main className={styles.raid}>
       <div className="information">
         <h3>Rekrutacja na rajdy trwa!</h3>
 
-        <p>Jeśli interesuje Cię rajdowanie z nami, napisz smiało a na pewno, dojdziemy do porozumienia!</p>
+        <p>Jeśli interesuje Cię rajdowanie z nami, napisz śmiało a na pewno, dojdziemy do porozumienia!</p>
 
         <p className="collapsed">Dni Rajdowe:</p>
 
@@ -120,7 +122,7 @@ export function RaidPage(props: PageProperties): ReactElement {
 
       <h1>
         <span className="visually-hidden">Rajd: </span>
-        Castle Nathria
+        {props.raid}
       </h1>
 
       {props.children}

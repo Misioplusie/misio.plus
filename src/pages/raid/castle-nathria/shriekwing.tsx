@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 
-import { BossProperties, Difficulity, Encounter, Model, RaidPage } from '../../../components/raid';
+import { BossProperties, Difficulty, Encounter, Model, RaidPage } from '../../../components/raid';
 
 export const model = '941695';
 export const name = 'Shriekwing';
@@ -14,7 +14,7 @@ function Data(): ReactElement {
     <h3>Faza pierwsza:</h3>
 
     <dl>
-      <Difficulity title="Poziom Normalny">
+      <Difficulty title="Poziom Normalny">
         <ul>
           <li>
             Wszyscy chowają się za tym samym pilarem, podczas {}
@@ -45,9 +45,9 @@ function Data(): ReactElement {
             </a>.
           </li>
         </ul>
-      </Difficulity>
+      </Difficulty>
 
-      <Difficulity title="Poziom Heroiczny">
+      <Difficulty title="Poziom Heroiczny">
         <ul>
           <li>
             Prowadź {}
@@ -57,25 +57,25 @@ function Data(): ReactElement {
             </a> do otwartej przestrzeni, i unikaj pierścieni sonicznych które emituje boss.
           </li>
         </ul>
-      </Difficulity>
+      </Difficulty>
     </dl>
 
     <h3>Faza druga:</h3>
 
     <dl>
-      <Difficulity title="Poziom Normalny">
+      <Difficulty title="Poziom Normalny">
         <ul>
           <li>Nieustannie trzymaj się 13+ jardów od bossa.</li>
           <li>Unikaj pierścieni sonicznych które się odbijają po pomieszczeniu.</li>
           <li>
-            Użuwaj pilarów, aby utrzymywać kontakt wzrokowy z bossem kiedy inkantuje {}
+            Używaj pilarów, aby utrzymywać kontakt wzrokowy z bossem kiedy inkantuje {}
             <a href="https://www.wowhead.com/spell=340047/sonar-shriek">
               <img src="https://wow.zamimg.com/images/wow/icons/tiny/spell_shadow_coneofsilence.gif" />
               Sonar Shriek
             </a>.
           </li>
         </ul>
-      </Difficulity>
+      </Difficulty>
     </dl>
   </>;
 }
@@ -87,7 +87,7 @@ export function Shriekwing(props: BossProperties): ReactElement {
 }
 
 export default function Details(): ReactElement {
-  return <RaidPage>
+  return <RaidPage raid="Castle Nathria" encounter={name}>
     <h2>{name}</h2>
 
     <Data />

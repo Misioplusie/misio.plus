@@ -27,7 +27,7 @@ function Data(): ReactElement {
         <a href="https://shadowlands.wowhead.com/spell=335114/sinseeker">
           <img src="https://wow.zamimg.com/images/wow/icons/tiny/ability_hunter_assassinate2.gif" />
           Sinseeker
-        </a> powinien ustawić się tak, by nikt inny niestał między bossem a nim.
+        </a> powinien ustawić się tak, by nikt inny nie stał między bossem a nim.
       </li>
       <li>
         Bijcie bossa i jego aktywnego peta przy każdej możliwej okazji. Obrażenia są współdzielone.
@@ -60,14 +60,14 @@ function Data(): ReactElement {
         Przesuwamy {}
           <a href="https://shadowlands.wowhead.com/npc=169457/bargast">
             Bargast
-          </a> zdala od bossa i używamy przeżywajek na tanku, gdy mierzeni są {}
+          </a> z dala od bossa i używamy przeżywajek na tanku, gdy mierzeni są {}
           <a href="https://shadowlands.wowhead.com/spell=334797/rip-soul">
             <img src="https://wow.zamimg.com/images/wow/icons/tiny/ability_druid_markofursol.gif" />
             Rip Soul
           </a>.
         </li>
       <li>
-        Healerzy powinni topowac adda rzucającego {}
+        Healerzy powinni topować adda rzucającego {}
         <a href="https://shadowlands.wowhead.com/spell=334797/rip-soul">
           <img src="https://wow.zamimg.com/images/wow/icons/tiny/ability_druid_markofursol.gif" />
           Rip Soul
@@ -76,7 +76,7 @@ function Data(): ReactElement {
       <li>
         Przesuwamy <a href="https://shadowlands.wowhead.com/npc=169457/bargast">
           Bargast
-        </a> zdala od bossa i używamy umiejętności typu crowd control  na addach które on spawnii gdy inkantuje {}
+        </a> z dala od bossa i używamy umiejętności typu crowd control  na addach które on spawni gdy inkantuje {}
         <a href="https://shadowlands.wowhead.com/spell=334757/shades-of-bargast">
           <img src="https://wow.zamimg.com/images/wow/icons/tiny/inv_felhound3_shadow_mount.gif" />
           Shades of Bargast
@@ -151,7 +151,7 @@ export function HuntsmanAltimor(props: BossProperties): ReactElement {
 }
 
 export default function Details(): ReactElement {
-  return <RaidPage>
+  return <RaidPage raid="Castle Nathria" encounter={name}>
     <h2>{name}</h2>
 
     <Data />

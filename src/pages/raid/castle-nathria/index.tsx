@@ -6,7 +6,7 @@ import { HuntsmanAltimor } from './huntsman-altimor';
 import { Shriekwing } from './shriekwing';
 
 export default function CastleNathria(): ReactElement {
-  return <RaidPage>
+  return <RaidPage raid="Castle Nathria">
     <Shriekwing />
     <HuntsmanAltimor />
   </RaidPage>;
