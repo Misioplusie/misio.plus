@@ -17,7 +17,7 @@ function Data(): ReactElement {
       <Difficulty title="Poziom Normalny">
         <ul>
           <li>
-            Wszyscy chowają się za tym samym pilarem, podczas {}
+            Wszyscy chowają się za tym samym filarem, podczas {}
             <a href="https://www.wowhead.com/spell=330711/bloodcurdling-shriek">
               <img src="https://wow.zamimg.com/images/wow/icons/tiny/spell_shadow_deathscream.gif" />
               Bloodcurdling Shriek
@@ -28,7 +28,8 @@ function Data(): ReactElement {
             <a href="https://www.wowhead.com/spell=342074/echolocation">
               <img src="https://wow.zamimg.com/images/wow/icons/tiny/ability_creature_cursed_05.gif" />
               Echolocation
-            </a>, udaj się do krawędzi pomieszczenia.
+            </a>, udaj się do krawędzi pomieszczenia by upuścić tam plamę. Ochroni to grupę przed dodatkowymi
+            obrażeniami.
           </li>
           <li>
             <strong>Tankowie</strong> rzucają przeżywajki zanim otrzymają {}
@@ -68,7 +69,7 @@ function Data(): ReactElement {
           <li>Nieustannie trzymaj się 13+ jardów od bossa.</li>
           <li>Unikaj pierścieni sonicznych które się odbijają po pomieszczeniu.</li>
           <li>
-            Używaj pilarów, aby utrzymywać kontakt wzrokowy z bossem kiedy inkantuje {}
+            Używaj filarów, aby utrzymywać kontakt wzrokowy z bossem kiedy inkantuje {}
             <a href="https://www.wowhead.com/spell=340047/sonar-shriek">
               <img src="https://wow.zamimg.com/images/wow/icons/tiny/spell_shadow_coneofsilence.gif" />
               Sonar Shriek
