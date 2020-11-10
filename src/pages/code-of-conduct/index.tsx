@@ -1,13 +1,11 @@
 import React, { ReactElement } from 'react';
 
-import { Footer, Header } from '../../partials';
+import { Page } from '../../components/page';
 
 import styles from './styles.module.scss';
 
 export default function CoC(): ReactElement {
-  return <>
-    <Header subtitle="Regulamin" page='coc' />
-
+  return <Page subtitle="Regulamin" slug='coc'>
     <main className={styles.main}>
       <h2>
         Rangi gildijne {}
@@ -39,7 +37,5 @@ export default function CoC(): ReactElement {
         <li>Reprezentuj gildię godnie.</li>
       </ol>
     </main>
-
-    <Footer />
-  </>;
+  </Page>;
 }

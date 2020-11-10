@@ -8,7 +8,7 @@ import Head from 'next/head';
 import React, { ReactElement } from 'react';
 import sharp from 'sharp';
 
-import { Footer, Header } from '../../partials';
+import { Page } from '../../components/page';
 
 import styles from './styles.module.scss';
 
@@ -51,7 +51,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<GetStaticPropsRe
 };
 
 export default function Gallery(props: GalleryProperties): ReactElement {
-  return <>
+  return <Page subtitle="Galeria" slug='gallery'>
     <Head>
       {props.gallery.map(item => <link
         key={item.filename}
@@ -59,8 +59,6 @@ export default function Gallery(props: GalleryProperties): ReactElement {
         href={item.filename}
         as="image" />)}
     </Head>
-
-    <Header subtitle="Galeria" page='gallery' />
 
     <main className={styles.gallery}>
       {props.gallery.map(item => <div key={item.filename}>
@@ -71,7 +69,5 @@ export default function Gallery(props: GalleryProperties): ReactElement {
         </a>
       </div>)}
     </main>
-
-    <Footer />
-  </>;
+  </Page>;
 }

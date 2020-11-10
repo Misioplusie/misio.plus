@@ -1,13 +1,13 @@
 import React, { ReactElement } from 'react';
 
-import { Page } from '../elements';
+import { RaidPage } from '../../../components/raid';
 
 import { HuntsmanAltimor } from './huntsman-altimor';
 import { Shriekwing } from './shriekwing';
 
 export default function CastleNathria(): ReactElement {
-  return <Page>
+  return <RaidPage>
     <Shriekwing />
     <HuntsmanAltimor />
-  </Page>;
+  </RaidPage>;
 }

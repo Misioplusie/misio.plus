@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 
-import { Navigation } from '../partials/header/navigation';
+import { Navigation } from '../components/header/navigation';
 
 import styles from './styles.module.scss';
 

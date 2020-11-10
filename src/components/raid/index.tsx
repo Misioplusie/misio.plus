@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React, { ReactElement, ReactNode } from 'react';
 
-import { Footer, Header } from '../../partials';
+import { Page } from '../page';
 
 import styles from './styles.module.scss';
 
@@ -72,10 +72,8 @@ export function Encounter(props: EncoutnerProperties): ReactElement {
   </details>;
 }
 
-export function Page(props: PageProperties): ReactElement {
-  return <>
-    <Header subtitle="Rajdy" page='raid' />
-
+export function RaidPage(props: PageProperties): ReactElement {
+  return <Page subtitle="Rajdy" slug='raid'>
     <main className={styles.raid}>
       <div className="information">
         <h3>Rekrutacja na rajdy trwa!</h3>
@@ -127,7 +125,5 @@ export function Page(props: PageProperties): ReactElement {
 
       {props.children}
     </main>
-
-    <Footer />
-  </>;
+  </Page>;
 }

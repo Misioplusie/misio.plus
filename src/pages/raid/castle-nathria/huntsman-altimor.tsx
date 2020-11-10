@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 
-import { BossProperties, Encounter, Model, Page } from '../elements';
+import { BossProperties, Encounter, Model, RaidPage } from '../../../components/raid';
 
 export const model = '944277';
 export const name = 'Huntsman Altimor';
@@ -151,9 +151,9 @@ export function HuntsmanAltimor(props: BossProperties): ReactElement {
 }
 
 export default function Details(): ReactElement {
-  return <Page>
+  return <RaidPage>
     <h2>{name}</h2>
 
     <Data />
-  </Page>;
+  </RaidPage>;
 }

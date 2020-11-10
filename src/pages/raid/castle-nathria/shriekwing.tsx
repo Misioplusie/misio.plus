@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 
-import { BossProperties, Difficulity, Encounter, Model, Page } from '../elements';
+import { BossProperties, Difficulity, Encounter, Model, RaidPage } from '../../../components/raid';
 
 export const model = '941695';
 export const name = 'Shriekwing';
@@ -87,9 +87,9 @@ export function Shriekwing(props: BossProperties): ReactElement {
 }
 
 export default function Details(): ReactElement {
-  return <Page>
+  return <RaidPage>
     <h2>{name}</h2>
 
     <Data />
-  </Page>;
+  </RaidPage>;
 }
