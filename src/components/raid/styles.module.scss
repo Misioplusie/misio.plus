@@ -61,3 +61,12 @@ main.raid {
     vertical-align: middle;
   }
 }
+
+section.video {
+  div {
+    iframe {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
