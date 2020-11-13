@@ -155,8 +155,8 @@ function Data(): ReactElement {
             <a href="https://shadowlands.wowhead.com/spell=334960/vicious-wound" data-wowhead="spell=334960">
               <img src="https://wow.zamimg.com/images/wow/icons/tiny/spell_druid_bloodythrash.gif" />
               Vicious Wound
-            </a>, które nakłada 6-cio sekundowe krwawienie, nie zadaje tragicznie dużo obrażeń, ale powinno byś limitowane
-            by nie rozłożyć się na większą ilość graczy.
+            </a>, które nakłada 6-cio sekundowe krwawienie, nie zadaje tragicznie dużo obrażeń, ale powinno być
+            limitowane by nie rozłożyć się na większą ilość graczy.
           </li>
           <li>
             <a href="https://shadowlands.wowhead.com/spell=334797/rip-soul" data-wowhead="spell=334797">
