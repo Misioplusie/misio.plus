@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 
-import { BossProperties, Difficulty, Encounter, Model, RaidPage } from '../../../components/raid';
+import { BossProperties, Difficulty, Encounter, Model, RaidPage, Video } from '../../../components/raid';
 
 export const model = '941699';
 export const name = 'Hungering Destroyer';
@@ -91,6 +91,8 @@ function Data(): ReactElement {
         </ul>
       </Difficulty>
     </dl>
+
+    <Video code="iRLHWTJTtN4" />
   </>;
 }
 
