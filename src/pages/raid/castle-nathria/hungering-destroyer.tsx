@@ -4,6 +4,7 @@ import { BossProperties, Difficulty, Encounter, Model, RaidPage, Video } from '.
 
 export const model = '941699';
 export const name = 'Hungering Destroyer';
+export const video = 'iRLHWTJTtN4';
 
 function Data(): ReactElement {
   return <>
@@ -92,7 +93,7 @@ function Data(): ReactElement {
       </Difficulty>
     </dl>
 
-    <Video code="iRLHWTJTtN4" />
+    <Video code={video} />
   </>;
 }
 

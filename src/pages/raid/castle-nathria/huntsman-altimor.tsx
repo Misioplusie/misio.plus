@@ -4,6 +4,7 @@ import { BossProperties, Difficulty, Encounter, Model, RaidPage, Video } from '.
 
 export const model = '944277';
 export const name = 'Huntsman Altimor';
+export const video = '2Zu_igLWBH8';
 
 function Data(): ReactElement {
   return <>
@@ -174,7 +175,7 @@ function Data(): ReactElement {
       </Difficulty>
     </dl>
 
-    <Video code="2Zu_igLWBH8" />
+    <Video code={video} />
   </>;
 }
 
