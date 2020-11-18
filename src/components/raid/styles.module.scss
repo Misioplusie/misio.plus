@@ -2,7 +2,7 @@
 @import "../../scss/variables";
 
 main.raid {
-  nav ul {
+  nav.submenu ul {
     list-style: none;
     margin: 1rem auto;
     padding: 0;
@@ -22,15 +22,15 @@ main.raid {
       border: 0;
       outline: none;
       cursor: pointer;
-      font-size: 24px;
-      font-size: 1.5rem;
+      font-size: 19px;
+      font-size: 1.1875rem;
 
       @include min($tablet) {
-        font-size: 32px;
-        font-size: 2rem;
+        font-size: 24px;
+        font-size: 1.5rem;
       }
 
-      h2 {
+      h3 {
         display: inline-block;
       }
     }
@@ -78,10 +78,52 @@ main.raid {
 }
 
 section.video {
+  border-top: 1px solid $gray;
+  margin: 1rem 0;
+  padding: 1rem 0;
+
   div {
     iframe {
       display: block;
+      height: 11.25rem;
       margin: 0 auto;
+      width: 20rem;
+
+      @include min($tablet) {
+        height: 19.25rem;
+        width: 35rem;
+      }
+    }
+  }
+}
+
+div.model {
+  img {
+    max-width: 100%;
+  }
+}
+
+nav.pagination {
+  border: 1px solid $gray;
+  border-left: 0;
+  border-right: 0;
+  margin: 1rem 0;
+  padding: 1rem 0;
+
+  ul {
+    display: flex;
+    flex: 2;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: block;
+      width: 50%;
+
+      &.next {
+        text-align: right;
+      }
     }
   }
 }

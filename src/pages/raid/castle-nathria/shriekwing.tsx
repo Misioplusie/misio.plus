@@ -2,8 +2,13 @@ import React, { ReactElement } from 'react';
 
 import { BossProperties, Difficulty, Encounter, Model, RaidPage, Video } from '../../../components/raid';
 
+import { name as next } from './huntsman-altimor';
+
+import { name as raidName } from '.';
+
 export const model = '941695';
 export const name = 'Shriekwing';
+export const video = 'o48DcaBkTnI';
 
 function Data(): ReactElement {
   return <>
@@ -79,18 +84,18 @@ function Data(): ReactElement {
       </Difficulty>
     </dl>
 
-    <Video code="o48DcaBkTnI" />
+    <Video code={video} />
   </>;
 }
 
 export function Shriekwing(props: BossProperties): ReactElement {
-  return <Encounter name={name} model={model} {...props}>
+  return <Encounter name={name} model={model} raid={raidName} {...props}>
     <Data />
   </Encounter>;
 }
 
 export default function Details(): ReactElement {
-  return <RaidPage raid="Castle Nathria" encounter={name}>
+  return <RaidPage raid={raidName} encounter={name} next={next}>
     <h2>{name}</h2>
 
     <Data />

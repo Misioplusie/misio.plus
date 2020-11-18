@@ -1,14 +1,20 @@
 import Link from 'next/link';
 import React, { ReactElement, ReactNode } from 'react';
 
+import { slugify } from '../../helpers/slugify';
 import { Page } from '../page';
 
 import styles from './styles.module.scss';
 
-interface RaidPageProperties {
+interface PaginationProperties {
+  readonly next?: string;
+  readonly previous?: string;
+  readonly raid: string;
+}
+
+interface RaidPageProperties extends PaginationProperties {
   readonly children: ReactNode;
   readonly encounter?: string;
-  readonly raid: string;
 }
 
 interface DifficultyProperties {
@@ -24,6 +30,7 @@ interface ModelProperties {
 interface EncounterProperties extends ModelProperties {
   readonly children: ReactNode;
   readonly open?: boolean;
+  readonly raid: string;
 }
 
 export interface BossProperties {
@@ -42,24 +49,24 @@ export function Difficulty({ children, title }: DifficultyProperties): ReactElem
 }
 
 export function Model(props: ModelProperties): ReactElement {
-  return <p>
+  return <div className={styles.model}>
     <img
-      src={`https://wow.zamimg.com/uploads/screenshots/normal/${props.model}.jpg?maxWidth=800`}
+      src={`https://wow.zamimg.com/uploads/screenshots/normal/${props.model}.jpg?maxWidth=768`}
       alt={`Model Bossa: ${props.name}`} />
-  </p>;
+  </div>;
 }
 
 export function Encounter(props: EncounterProperties): ReactElement {
-  const slug = props.name.toLocaleLowerCase().replace(/(\s_?:?@?\/?\\?)+/g, '-').replace(/[^0-9a-zA-Z-]/g, '');
+  const slug = slugify(props.name);
 
   return <details id={slug} open={props.open}>
     <summary>
-      <h2>
+      <h3>
         {props.name} {}
         <small>
           <Link
             href={{
-              pathname: '/raid/castle-nathria/[slug]',
+              pathname: `/raid/${slugify(props.raid)}/[slug]`,
               query: { slug },
             }}
             // title={`Bezpośredni link do bossa: ${props.name}`}
@@ -67,7 +74,7 @@ export function Encounter(props: EncounterProperties): ReactElement {
             [bezpośrednik]
           </Link>
         </small>
-      </h2>
+      </h3>
     </summary>
 
     {props.children}
@@ -119,12 +126,33 @@ function Announcement(): ReactElement {
   </div>;
 }
 
+function Pagination(props: PaginationProperties): ReactElement {
+  return  <nav className={styles.pagination}>
+    <ul>
+      <li className={styles.previous}>
+        {props.previous
+          ? <Link href={`/raid/${slugify(props.raid)}/${slugify(props.previous)}`}>
+              {`Poprzedni boss: ${props.previous}`}
+            </Link>
+        : null}
+      </li>
+      <li className={styles.next}>
+        {props.next
+          ? <Link href={`/raid/${slugify(props.raid)}/${slugify(props.next)}`}>
+              {`Następny boss: ${props.next}`}
+            </Link>
+        : null}
+      </li>
+    </ul>
+  </nav>;
+}
+
 export function RaidPage(props: RaidPageProperties): ReactElement {
   return <Page subtitle={`Rajd - ${props.raid}`} slug='raid'>
     <main className={styles.raid}>
       <Announcement />
 
-      <nav>
+      <nav className={styles.submenu}>
         <ul>
           <li>
             <Link href="/raid/rules">Zasady i oczekiwania</Link>
@@ -140,7 +168,11 @@ export function RaidPage(props: RaidPageProperties): ReactElement {
         {props.raid}
       </h1>
 
+      <Pagination {...props} />
+
       {props.children}
+
+      <Pagination {...props} />
     </main>
   </Page>;
 }

@@ -2,8 +2,14 @@ import React, { ReactElement } from 'react';
 
 import { BossProperties, Difficulty, Encounter, Model, RaidPage, Video } from '../../../components/raid';
 
+import { name as next } from './artificer-xymox';
+import { name as previous } from './huntsman-altimor';
+
+import { name as raidName } from '.';
+
 export const model = '941699';
 export const name = 'Hungering Destroyer';
+export const video = 'iRLHWTJTtN4';
 
 function Data(): ReactElement {
   return <>
@@ -92,18 +98,18 @@ function Data(): ReactElement {
       </Difficulty>
     </dl>
 
-    <Video code="iRLHWTJTtN4" />
+    <Video code={video} />
   </>;
 }
 
 export function HungeringDestroyer(props: BossProperties): ReactElement {
-  return <Encounter name={name} model={model} {...props}>
+  return <Encounter name={name} model={model} raid={raidName} {...props}>
     <Data />
   </Encounter>;
 }
 
 export default function Details(): ReactElement {
-  return <RaidPage raid="Castle Nathria" encounter={name}>
+  return <RaidPage raid={raidName} encounter={name} previous={previous} next={next}>
     <h2>{name}</h2>
 
     <Data />
