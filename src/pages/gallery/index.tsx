@@ -5,8 +5,8 @@ import { promisify } from 'util';
 import { DateTime, Settings } from 'luxon';
 import { GetStaticProps, GetStaticPropsResult } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
 import React, { ReactElement } from 'react';
-import sharp from 'sharp';
 
 import { Page } from '../../components/page';
 
@@ -32,15 +32,11 @@ export const getStaticProps: GetStaticProps = async (): Promise<GetStaticPropsRe
   const elements = await Promise.all(filenames.filter(name => name !== 'min').map(async filename => {
     const parseName = filename.match('[0-9]{4}-[0-9]{2}-[0-9]{2}');
     const timestamp = parseName ? DateTime.fromISO(parseName[0]) : DateTime.local();
-    await sharp(resolve('public', 'gallery', filename))
-      .resize(720)
-      .toFile(resolve('public', 'gallery', 'min', filename));
 
-    return {
+    return await Promise.resolve({
       filename: `/gallery/${filename}`,
-      thumbnail: `/gallery/min/${filename}`,
       timestamp: timestamp.toMillis(),
-    };
+    });
   }));
 
   return {
@@ -63,9 +59,12 @@ export default function Gallery(props: GalleryProperties): ReactElement {
     <main className={styles.gallery}>
       {props.gallery.map(item => <div key={item.filename}>
         <a href={item.filename} target="_blank">
-          <img
-            src={item.thumbnail}
-            alt={`Zrobione ${DateTime.fromMillis(item.timestamp).toLocaleString(DateTime.DATE_FULL)}`} />
+          <Image
+            alt={`Zrobione ${DateTime.fromMillis(item.timestamp).toLocaleString(DateTime.DATE_FULL)}`}
+            height={405}
+            src={item.filename}
+            width={720}
+          />
         </a>
       </div>)}
     </main>
