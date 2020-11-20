@@ -127,6 +127,10 @@ function Announcement(): ReactElement {
 }
 
 function Pagination(props: PaginationProperties): ReactElement {
+  if (!props.next && !props.previous) {
+    return <></>;
+  }
+
   return  <nav className={styles.pagination}>
     <ul>
       <li className={styles.previous}>
