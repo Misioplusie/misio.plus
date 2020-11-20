@@ -2,6 +2,21 @@
 @import "../../scss/variables";
 
 main.raid {
+  nav ul {
+    list-style: none;
+    margin: 1rem auto;
+    padding: 0;
+    text-align: center;
+
+    li {
+      display: inline;
+
+      &:not(:last-of-type) {
+        margin-right: .5rem;
+      }
+    }
+  }
+
   details {
     summary {
       border: 0;

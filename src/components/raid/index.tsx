@@ -74,51 +74,66 @@ export function Encounter(props: EncounterProperties): ReactElement {
   </details>;
 }
 
+function Announcement(): ReactElement {
+  return <div className="information">
+    <h3>Rekrutacja na rajdy trwa!</h3>
+
+    <p>Jeśli interesuje Cię rajdowanie z nami, napisz śmiało a na pewno, dojdziemy do porozumienia!</p>
+
+    <p className="collapsed">Dni Rajdowe:</p>
+
+    <p className="collapsed">
+      <span className="visually-hidden">Dni rajdowe:</span>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      Poniedziałek, Środa - <strong>Dulamari</strong>
+    </p>
+
+    <p className="collapsed">
+      <span className="visually-hidden">Dni rajdowe:</span>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      Sobota, Niedziela - <strong>Aurumya</strong>
+    </p>
+
+    <p>
+      Rajd dla {}
+      <abbr title={'osób jeszcze zapoznających się z mechaniką, samą grą, bądź też cierpliwych i chętnych '
+        + 'nadgonić z poziomem itemów'}>
+        Gałganów
+      </abbr> - <strong>Matronalis</strong>
+    </p>
+
+    <p className="collapsed">
+      Kontakt dodatkowy: {}
+      <strong>Liferie</strong>, {}
+      <strong>Cefeon</strong>, {}
+      <strong>Melonek</strong>, {}
+      <strong>Narkoromek</strong>
+    </p>
+
+    <p>
+      <em>
+        Każdy z nas ma alty bądź może nie być dostępny w danej chwili w grze.
+        Pytajcie na czacie lub Discordzie a zapewniam, że nikt nie zostanie umyślnie zignorowany.
+      </em>
+    </p>
+  </div>;
+}
+
 export function RaidPage(props: RaidPageProperties): ReactElement {
   return <Page subtitle={`Rajd - ${props.raid}`} slug='raid'>
     <main className={styles.raid}>
-      <div className="information">
-        <h3>Rekrutacja na rajdy trwa!</h3>
+      <Announcement />
 
-        <p>Jeśli interesuje Cię rajdowanie z nami, napisz śmiało a na pewno, dojdziemy do porozumienia!</p>
-
-        <p className="collapsed">Dni Rajdowe:</p>
-
-        <p className="collapsed">
-          <span className="visually-hidden">Dni rajdowe:</span>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          Sobota, Niedziela - <strong>Ectimel</strong>
-        </p>
-
-        <p className="collapsed">
-          <span className="visually-hidden">Dni rajdowe:</span>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          Poniedziałek, Środa - <strong>Dulamari</strong>
-        </p>
-
-        <p>
-          Rajd dla {}
-          <abbr title={'osób jeszcze zapoznających się z mechaniką, samą grą, bądź też cierpliwych i chętnych '
-            + 'nadgonić z poziomem itemów'}>
-            Gałganów
-          </abbr> - <strong>Matronalis</strong>
-        </p>
-
-        <p className="collapsed">
-          Kontakt dodatkowy: {}
-          <strong>Liferie</strong>, {}
-          <strong>Cefeon</strong>, {}
-          <strong>Melonek</strong>, {}
-          <strong>Narkoromek</strong>
-        </p>
-
-        <p>
-          <em>
-            Każdy z nas ma alty bądź może nie być dostępny w danej chwili w grze.
-            Pytajcie na czacie lub Discordzie a zapewniam, że nikt nie zostanie umyślnie zignorowany.
-          </em>
-        </p>
-      </div>
+      <nav>
+        <ul>
+          <li>
+            <Link href="/raid/rules">Zasady i oczekiwania</Link>
+          </li>
+          <li>
+            <Link href="/raid/castle-nathria">Castle Nathria</Link>
+          </li>
+        </ul>
+      </nav>
 
       <h1>
         <span className="visually-hidden">Rajd: </span>
