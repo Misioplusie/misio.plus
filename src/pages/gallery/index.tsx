@@ -18,7 +18,6 @@ const readDir = promisify(readdir);
 
 interface GalleryElement {
   readonly filename: string;
-  readonly thumbnail: string;
   readonly timestamp: number;
 }
 
